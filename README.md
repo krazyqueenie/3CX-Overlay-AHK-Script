@@ -86,3 +86,14 @@ This project is licensed under **Creative Commons Attribution-NonCommercial 4.0 
 - ❌ Not allowed to redistribute, re-upload, or include in paid products
 
 See [`LICENSE.txt`](LICENSE.txt) for full terms.
+
+### 💌 Need a Custom Version?
+
+If you'd like a personalized version of this project — whether it's a theme, script, overlay, or something else — I take custom requests!
+
+📧 Email me: krazyqueenie@gmail.com  
+💵 Payment accepted via Zelle or Cash App  
+(PayPal available on request)
+
+Let me know what you need, and I’ll let you know what it’ll cost. My rates are very fair and budget friendly!
+
