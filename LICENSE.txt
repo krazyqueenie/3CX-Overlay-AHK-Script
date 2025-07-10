@@ -1,0 +1,19 @@
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+This script is free for personal use.
+
+✔️ You may:
+- Use and modify this script for your personal 3CX setup.
+- Change image paths, X/Y offsets, and customize overlays as needed.
+
+❌ You may NOT:
+- Redistribute, re-upload, or sell this script or any modified version.
+- Include this in commercial products or public download sites.
+
+Tested with:
+- AutoHotkey v1.1.36.02
+- 3CX Desktop App (Windows)
+
+By using this script, you agree to the terms above.
+
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/
