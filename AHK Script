@@ -3,9 +3,9 @@
 SetTitleMatchMode, 2
 
 ; === Image paths ===
-idleImage := "C:\Users\sales\Desktop\PhoneTest1.png"
-callImage := "C:\Users\sales\Desktop\PhoneInCall.png"
-menuImage := "C:\Users\sales\Desktop\PhoneMenu.png"
+idleImage := "C:\Users\sales\Desktop\Amanda\AHK 3CX Overlay\PhoneTest1.png"
+callImage := "C:\Users\sales\Desktop\Amanda\AHK 3CX Overlay\PhoneTest1.png"
+menuImage := "C:\Users\sales\Desktop\Amanda\AHK 3CX Overlay\PhoneTest1.png"
 currentImage := idleImage
 
 global isLocked := true
@@ -46,29 +46,33 @@ Return
 ; === Follows 3CX and switches overlay as needed ===
 Follow3CX:
 if (isLocked) {
-    WinGetPos, x, y, w, h, ahk_class #32770
-    if (x != "") {
-        ; Pick image based on height (adjust thresholds as needed)
-        if (h > 650) {
-            newImage := callImage
-        } else if (h > 450) {
-            newImage := menuImage
-        } else {
-            newImage := idleImage
-        }
+    WinGet, winID, ID, ahk_class #32770
+    WinGet, procName, ProcessName, ahk_id %winID%
+    if (procName = "3CXPhone.exe") {
+        WinGetPos, x, y, w, h, ahk_id %winID%
+        if (x != "") {
+            ; Pick image based on height (adjust thresholds as needed)
+            if (h > 650) {
+                newImage := callImage
+            } else if (h > 450) {
+                newImage := menuImage
+            } else {
+                newImage := idleImage
+            }
 
-        ; Swap overlay image if it changed
-        if (newImage != currentImage) {
-            currentImage := newImage
-            GuiControl,, MyPic, %currentImage%
-        }
+            ; Swap overlay image if it changed
+            if (newImage != currentImage) {
+                currentImage := newImage
+                GuiControl,, MyPic, %currentImage%
+            }
 
-        offsetX := 202
-        offsetY := -6
-        newX := x + offsetX
-        newY := y + offsetY
-        Gui, Show, NoActivate x%newX% y%newY%, OverlayWin
-        WinSet, ExStyle, +0x20, OverlayWin  ; Ensure click-through is set
+            offsetX := 202
+            offsetY := -6
+            newX := x + offsetX
+            newY := y + offsetY
+            Gui, Show, NoActivate x%newX% y%newY%, OverlayWin
+            WinSet, ExStyle, +0x20, OverlayWin  ; Ensure click-through is set
+        }
     }
 }
 Return
